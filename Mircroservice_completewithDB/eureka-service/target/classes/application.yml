@@ -1,0 +1,18 @@
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+    db-service:
+      path: /db-service/**
+      url: http://localhost:8300
+    stock-service:
+      path: /stock-service/**
+     # serviceId: STOCK-SERVICE
+      url: http://localhost:8301
+      
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    hostname: localhost
